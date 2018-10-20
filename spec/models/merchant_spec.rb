@@ -9,7 +9,7 @@ RSpec.describe Merchant, type: :model do
     it 'has a valid factory' do
       expect(FactoryBot.build(:merchant).save).to be true
     end
-    
+
     it 'initializes a new merchant with correct params' do
       merchant = FactoryBot.build(:merchant)
       expect(merchant).to be_an_instance_of described_class
