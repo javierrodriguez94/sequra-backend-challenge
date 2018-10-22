@@ -10,7 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_20_164709) do
+ActiveRecord::Schema.define(version: 2018_10_22_225050) do
+
+  create_table "disbursements", force: :cascade do |t|
+    t.integer "order_id"
+    t.float "amount"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["order_id"], name: "index_disbursements_on_order_id"
+  end
 
   create_table "merchants", force: :cascade do |t|
     t.string "name"
