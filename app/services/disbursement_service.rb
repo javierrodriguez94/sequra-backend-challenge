@@ -4,7 +4,7 @@ module DisbursementService
       raise ArgumentError.new 'Can not create a disbursement for a non completed order' unless order.completed_at?
       amount = order.amount
       amount_with_fee = amount + calculate_fee(amount)
-      Disbursement.new(order: order, amount: amount_with_fee)
+      Disbursement.create(order: order, amount: amount_with_fee)
     end
 
   private
