@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_22_225050) do
+ActiveRecord::Schema.define(version: 2018_10_23_174024) do
 
   create_table "disbursements", force: :cascade do |t|
     t.integer "order_id"
@@ -34,6 +34,7 @@ ActiveRecord::Schema.define(version: 2018_10_22_225050) do
     t.float "amount"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.datetime "completed_at"
     t.index ["merchant_id"], name: "index_orders_on_merchant_id"
     t.index ["shopper_id"], name: "index_orders_on_shopper_id"
   end
